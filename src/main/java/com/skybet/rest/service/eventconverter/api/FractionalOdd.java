@@ -1,18 +1,19 @@
 package com.skybet.rest.service.eventconverter.api;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class FractionalOdd {
+public class FractionalOdd implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	@JsonProperty
 	private int numerator;
 	
 	@JsonProperty
 	private int denominator;
-	
-
 	
 	public int getNumerator() {
 		return numerator;

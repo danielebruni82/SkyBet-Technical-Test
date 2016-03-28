@@ -1,10 +1,16 @@
 package com.skybet.rest.service.eventconverter.api;
 
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class FractionalEventJSON {
+public class FractionalEventJSON implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
 	@JsonProperty
-	private long betId;
+	private long bet_id;
 
 	@JsonProperty
 	private String event;
@@ -13,20 +19,20 @@ public class FractionalEventJSON {
 	private String name;
 
 	@JsonProperty
-	private FractionalOdd odd;
+	private FractionalOdd odds;
 
 	@JsonProperty
 	private double stake;
 
 	@JsonProperty
-	private int trasactionId;
+	private int transaction_id;
 
-	public long getBetId() {
-		return betId;
+	public long getBet_id() {
+		return bet_id;
 	}
 
-	public void setBetId(long betId) {
-		this.betId = betId;
+	public void setBet_id(long bet_id) {
+		this.bet_id = bet_id;
 	}
 
 	public String getEvent() {
@@ -45,6 +51,14 @@ public class FractionalEventJSON {
 		this.name = name;
 	}
 
+	public FractionalOdd getOdds() {
+		return odds;
+	}
+
+	public void setOdds(FractionalOdd odds) {
+		this.odds = odds;
+	}
+
 	public double getStake() {
 		return stake;
 	}
@@ -53,67 +67,14 @@ public class FractionalEventJSON {
 		this.stake = stake;
 	}
 
-	public int getTrasactionId() {
-		return trasactionId;
+	public int getTransaction_id() {
+		return transaction_id;
 	}
 
-	public void setTrasactionId(int trasactionId) {
-		this.trasactionId = trasactionId;
+	public void setTransaction_id(int transaction_id) {
+		this.transaction_id = transaction_id;
 	}
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + (int) (betId ^ (betId >>> 32));
-		result = prime * result + ((event == null) ? 0 : event.hashCode());
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		result = prime * result + ((odd == null) ? 0 : odd.hashCode());
-		long temp;
-		temp = Double.doubleToLongBits(stake);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
-		result = prime * result + trasactionId;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		FractionalEventJSON other = (FractionalEventJSON) obj;
-		if (betId != other.betId)
-			return false;
-		if (event == null) {
-			if (other.event != null)
-				return false;
-		} else if (!event.equals(other.event))
-			return false;
-		if (name == null) {
-			if (other.name != null)
-				return false;
-		} else if (!name.equals(other.name))
-			return false;
-		if (odd == null) {
-			if (other.odd != null)
-				return false;
-		} else if (!odd.equals(other.odd))
-			return false;
-		if (Double.doubleToLongBits(stake) != Double.doubleToLongBits(other.stake))
-			return false;
-		if (trasactionId != other.trasactionId)
-			return false;
-		return true;
-	}
-
-	@Override
-	public String toString() {
-		return "EventFractionalJSON [betId=" + betId + ", event=" + event + ", name=" + name + ", odd=" + odd
-				+ ", stake=" + stake + ", trasactionId=" + trasactionId + "]";
-	}
 }
 
 
