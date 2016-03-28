@@ -10,15 +10,11 @@ Requirements
 ------------
 - Maven :
 			
-			mvn eclipse:clean
-			
-			mvn eclipse:eclipse
-			
-			Set the address.book.file.location into project.properties with address-book file path and run the project using mvn exec:java -Dexec.mainClass="Main"
+			mvn clean package
 			
 			or
 			
-			Run the project: mvn exec:java -Dexec.mainClass="Main" -Dexec.args="FILEPATH"
+			Run the project: java -jar oddConverter-0.0.1-SNAPSHOT.jar server oddConverter.yml
 
 			Run junit test: mvn test
 
