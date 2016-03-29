@@ -14,7 +14,7 @@ Requirements
 			
 			or
 			
-			Run the project: java -jar oddConverter-0.0.1-SNAPSHOT.jar server oddConverter.yml
+			Run the project (target folder): java -jar oddConverter-0.0.1-SNAPSHOT.jar server oddConverter.yml
 
 			Run junit test: mvn test
 
